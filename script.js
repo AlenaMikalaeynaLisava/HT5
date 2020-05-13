@@ -27,7 +27,6 @@ let th;
 let td;
 
 for (let key in array[0]) {
-    console.log (array[0][key]);
         th = document.createElement('th'); 
         th.innerHTML = array[0][key];
         tr.append(th);
@@ -35,7 +34,6 @@ for (let key in array[0]) {
      };
 
 for (let key in array[1]) {
-    console.log (array[1][key]);
     td = document.createElement('td');
     td.innerHTML = array[1][key];
     tr1.append(td);
@@ -43,7 +41,6 @@ for (let key in array[1]) {
      };
 
 for (let key in array[2]) {
-    console.log (array[2][key]);
     td = document.createElement('td');
     td.innerHTML = array[2][key];
     tr2.append(td);
