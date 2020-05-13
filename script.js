@@ -7,17 +7,18 @@ let div = document.createElement('div');
 div.className = "container";
 document.body.append(div);
 let table = document.createElement('table');
-div.prepend(table);
+div.append(table);
 let thead = document.createElement('thead');
-table.prepend(thead);
-let tr1 = document.createElement('tr');
-tr1.className = 'tr1';
-thead.prepend(tr1);
+table.append(thead);
+let tr = document.createElement('tr');
+tr.className = 'tr';
+thead.append(tr);
+
 let tbody = document.createElement('tbody');
 table.append(tbody);
-let tr = document.createElement('tr');
-tr.className = "tr";
-tbody.prepend(tr);
+let tr1 = document.createElement('tr');
+tr1.className = "tr1";
+tbody.prepend(tr1);
 let tr2 = document.createElement('tr');
 tr2.className = "t2";
 tbody.append(tr2);
@@ -25,24 +26,50 @@ tbody.append(tr2);
 let th;
 let td;
 
-function getListContent1(arrayElement, ElementToCreate, ParentElementForCreation) {
-    for (let key in array[arrayElement]) {
-        if(ElementToCreate == th){
+for (let key in array[0]) {
+    console.log (array[0][key]);
+        th = document.createElement('th'); 
+        th.innerHTML = array[0][key];
+        tr.append(th);
+        th.style.border = "thick solid #0000FF"; 
+     };
+
+for (let key in array[1]) {
+    console.log (array[1][key]);
+    td = document.createElement('td');
+    td.innerHTML = array[1][key];
+    tr1.append(td);
+    td.style.border = "thick solid #0000FF"; 
+     };
+
+for (let key in array[2]) {
+    console.log (array[2][key]);
+    td = document.createElement('td');
+    td.innerHTML = array[2][key];
+    tr2.append(td);
+    td.style.border = "thick solid #0000FF"; 
+     };
+
+
+
+/*function getListContent1(arrayElementNumber, ElementToCreate, ParentElementForCreation) {
+    for (let key in arrayElementNumber) {
+            if(ElementToCreate === th){
             th = document.createElement('th'); 
-            th.innerHTML = array[arrayElement][key];
+            th.innerHTML = arrayElementNumber[key];
             ParentElementForCreation.append(th);
             th.style.border = "thick solid #0000FF"; 
          }else { td = document.createElement('td');
-            td.innerHTML = array[arrayElement][key];
+            td.innerHTML = arrayElementNumber[key];
             ParentElementForCreation.append(td);
             td.style.border = "thick solid #0000FF"; 
                 }
     }
 }
               
-getListContent1(0, th, tr1);
-getListContent1(1, td, tr);
-getListContent1(2, td, tr2);
+getListContent1(array[0], th, tr);
+getListContent1(array[1], td, tr1);
+getListContent1(array[2], td, tr2);*/
 
 document.body.style.backgroundColor = 'green';
 
