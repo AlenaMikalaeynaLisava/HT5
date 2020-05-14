@@ -10,42 +10,46 @@ let table = document.createElement('table');
 div.append(table);
 let thead = document.createElement('thead');
 table.append(thead);
-let tr = document.createElement('tr');
-tr.className = 'tr';
-thead.append(tr);
+let TheadRow = document.createElement('tr');
+TheadRow.className = 'TheadRow';
+thead.append(TheadRow);
 
 let tbody = document.createElement('tbody');
 table.append(tbody);
-let tr1 = document.createElement('tr');
-tr1.className = "tr1";
-tbody.prepend(tr1);
-let tr2 = document.createElement('tr');
-tr2.className = "t2";
-tbody.append(tr2);
+let FirstTbodyRow = document.createElement('tr');
+FirstTbodyRow.className = "FirstTbodyRow";
+tbody.prepend(FirstTbodyRow);
+let SecondTbodyRow = document.createElement('tr');
+SecondTbodyRow.className = "SecondTbodyRow";
+tbody.append(SecondTbodyRow);
 
 let th;
 let td;
 
 for (let key in array[0]) {
+    console.log (array[0][key]);
         th = document.createElement('th'); 
         th.innerHTML = array[0][key];
-        tr.append(th);
+        TheadRow.append(th);
         th.style.border = "thick solid #0000FF"; 
      };
 
 for (let key in array[1]) {
+    console.log (array[1][key]);
     td = document.createElement('td');
     td.innerHTML = array[1][key];
-    tr1.append(td);
+    FirstTbodyRow.append(td);
     td.style.border = "thick solid #0000FF"; 
      };
 
 for (let key in array[2]) {
+    console.log (array[2][key]);
     td = document.createElement('td');
     td.innerHTML = array[2][key];
-    tr2.append(td);
+    SecondTbodyRow.append(td);
     td.style.border = "thick solid #0000FF"; 
      };
+
 
 
 
