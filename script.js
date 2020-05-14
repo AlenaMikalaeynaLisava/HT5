@@ -26,29 +26,27 @@ tbody.append(SecondTbodyRow);
 let th;
 let td;
 
-for (let key in array[0]) {
-    console.log (array[0][key]);
-        th = document.createElement('th'); 
-        th.innerHTML = array[0][key];
+for(i=0; i<array.length; i++){
+    for (let key in array[i]) {
+        //console.log (array[i][key]);
+        if(i==0){
+         th = document.createElement('th'); 
+         th.innerHTML = array[i][key];
         TheadRow.append(th);
         th.style.border = "thick solid #0000FF"; 
-     };
-
-for (let key in array[1]) {
-    console.log (array[1][key]);
-    td = document.createElement('td');
-    td.innerHTML = array[1][key];
-    FirstTbodyRow.append(td);
-    td.style.border = "thick solid #0000FF"; 
-     };
-
-for (let key in array[2]) {
-    console.log (array[2][key]);
-    td = document.createElement('td');
-    td.innerHTML = array[2][key];
-    SecondTbodyRow.append(td);
-    td.style.border = "thick solid #0000FF"; 
-     };
+        }else if(i==1){
+        td = document.createElement('td');
+        td.innerHTML = array[i][key];
+        FirstTbodyRow.append(td);
+        td.style.border = "thick solid #0000FF"; 
+        }else{
+        td = document.createElement('td');
+        td.innerHTML = array[i][key];
+        SecondTbodyRow.append(td);
+        td.style.border = "thick solid #0000FF"; 
+        }     
+         };
+}
 
 
 
